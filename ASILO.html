@@ -138,7 +138,7 @@
         </nav>
     </header>
     
-    <CENTER> <p style="color: #ffffff;">PASOS A SEGUIR</p> </CENTER>
+    <center> <p style="color: #ffffff;">PASOS A SEGUIR</p> </center>
     
     <div class="container">
         <div class="image-container">
@@ -177,7 +177,7 @@
         const imageElement = document.querySelector('.image');
         let currentIndex = 0;
 
-        imageElement.addEventListener('click', () => {
+        imageElement.addEventListener('mouseover', () => {
             currentIndex = (currentIndex + 1) % images.length;
             imageElement.src = images[currentIndex];
         });
@@ -185,4 +185,3 @@
 
 </body>
 </html>
-
