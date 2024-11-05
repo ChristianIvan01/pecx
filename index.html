@@ -9,8 +9,17 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: rgb(245, 230, 242);
             color: #1d1b1b;
+            animation: cambioFondo 10s infinite alternate;
+            padding-bottom: 50px; /* Deja espacio para el footer */
+        }
+
+        @keyframes cambioFondo {
+            0% { background-color: #f0f8ff; } /* Azul muy suave */
+            25% { background-color: #e6f7f1; } /* Verde suave */
+            50% { background-color: #fff0f5; } /* Rosa suave */
+            75% { background-color: #f7f7f7; } /* Blanco suave */
+            100% { background-color: #f0f8ff; } /* Azul suave */
         }
 
         header {
@@ -19,30 +28,10 @@
             text-align: center;
         }
 
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
+        .container {
+            max-width: 800px;
+            margin: auto;
             text-align: center;
-        }
-
-        nav ul li {
-            display: inline-block;
-            margin-right: 20px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: white;
-            font-size: 1.2em;
-            padding: 10px 20px;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-            color: #fff;
-            border-radius: 5px;
         }
 
         footer {
@@ -51,55 +40,66 @@
             text-align: center;
             padding: 10px;
             position: fixed;
-            bottom: 0;
+            bottom: -100px; /* Inicia fuera de la pantalla */
             width: 100%;
+            transition: bottom 0.3s ease; /* Suaviza el movimiento al aparecer */
         }
 
-        section {
-            margin: 20px;
+        footer.visible {
+            bottom: 0; /* Aparece cuando el scroll está hacia abajo */
+        }
+
+        .menu {
+            position: fixed;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            width: 250px; /* Ajustado a un ancho más razonable */
+            background-color: #070707;
+            border-radius: 10px;
+            overflow: hidden;
+            z-index: 1000;
+        }
+
+        .menu a {
+            display: block;
             padding: 20px;
-            background-color: #6f79fd;
-            border-radius: 5px;
-            color: #fff;
+            color: rgb(92, 154, 156);
+            text-align: center;
+            text-decoration: none;
+            margin-bottom: 5px;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
-        .container {
-            max-width: 800px;
-            margin: auto;
-            text-align: center;
+        .menu a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            color: #fff;
+            transform: scale(1.1);
         }
+
+        .menu a:nth-child(1):hover { background-color: #e27114; }
+        .menu a:nth-child(2):hover { background-color: #104055; }
+        .menu a:nth-child(3):hover { background-color: #1e490a; }
+        .menu a:nth-child(4):hover { background-color: #531350; }
 
         .image-container {
             position: relative;
             display: inline-block;
+            margin-bottom: 20px; /* Espacio entre el logo y el texto */
         }
 
         .image {
-            width: 350px;
+            width: 250px; /* Haciendo el logo un poco más pequeño */
         }
 
-        h1 {
-            font-size: 3em;
-            animation: parpadeo 1s infinite, brillo 1.5s infinite;
-        }
-
-        @keyframes parpadeo {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-
-        @keyframes brillo {
-            0% { text-shadow: 0 0 5px #c340d4, 0 0 10px #1fbda8; }
-            50% { text-shadow: 0 0 20px #c340d4, 0 0 30px #1fbda8; }
-            100% { text-shadow: 0 0 5px #c340d4, 0 0 10px #1fbda8; }
-        }
-
-        video {
-            max-width: 100%; 
-            height: auto; 
+        .objective {
+            font-size: 1.5em;
+            color: #333;
+            font-weight: bold;
             margin-top: 20px;
+            line-height: 1.6;
+            font-family: 'Arial', sans-serif;
         }
-
     </style>
 </head>
 <body>
@@ -108,40 +108,14 @@
         <nav>
         </nav>
     </header>
-    <style>
- .menu {
-        position: fixed;
-        top: 50%;
-        right: 0;
-        transform: translateY(-50%);
-        width: 60px;
-        background-color: #070707;
-    }
-      .menu a {
-        display: block;
-        padding: 40px;
-        color: rgb(92, 154, 156);
-        text-align: center;
-        text-decoration: none;
-        margin-bottom: 5px;
-        transition: background-color 0.3s;
-    }
-    .menu a:nth-child(1):hover { background-color: #e27114; }
-    .menu a:nth-child(2):hover { background-color: #104055; }
-    .menu a:nth-child(3):hover { background-color: #1e490a; }
-    .menu a:nth-child(4):hover { background-color: #531350; }
-</style>
-  
-<div class="menu">
-    <li><a href="lentes.html">LENTES PARA TODOS</a></li>
-    <li><a href="ASILO.html">ASILO</a></li>
-    <li><a href="TAPAS.HTML">TAPAS</a></li>
-    <li><a href="ZOOLOGICO.html">ZOOLOGICO</a></li>
-</div>
 
     <div class="container">
         <div class="image-container">
             <img src="LOGOPP.png" class="image" alt="LOGO DE PROYECTO PEC">
+        </div>
+
+        <div class="objective">
+            <p><strong>Objetivo del Proyecto:</strong> Fomentar la integración de la comunidad a través de diversas actividades que promuevan el bienestar social, la educación y el apoyo a diferentes sectores vulnerables.</p>
         </div>
 
         <video autoplay loop muted>
@@ -157,9 +131,27 @@
         </section>
     </div>
 
-    <footer>
+    <footer id="footer">
         <p>© 2024 Proyecto Escuela, Comunidad (PEC).</p>
     </footer>
+
+    <div class="menu">
+        <a href="lentes.html">LENTES PARA TODOS</a>
+        <a href="ASILO.html">ASILO</a>
+        <a href="TAPAS.HTML">TAPAS</a>
+        <a href="ZOOLOGICO.html">ZOOLOGICO</a>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            var footer = document.getElementById('footer');
+            if (window.scrollY > 100) {
+                footer.classList.add('visible');
+            } else {
+                footer.classList.remove('visible');
+            }
+        });
+    </script>
 </body>
 </html>
 
