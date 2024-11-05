@@ -61,9 +61,14 @@
             text-align: center;
         }
 
+        .logo-container {
+            margin: 20px 0; 
+        }
+
         .image-container {
             position: relative;
             display: inline-block;
+            margin: 20px 0;
         }
 
         .image {
@@ -115,6 +120,12 @@
             animation: parpadeo 1s infinite, brillo 1.5s infinite;
         }
 
+        .steps-title {
+            color: black;
+            margin-top: 20px; 
+            font-size: 1.5em; 
+        }
+
         @keyframes parpadeo {
             0%, 100% { opacity: 1; }
             50% { opacity: 0; }
@@ -139,10 +150,18 @@
     </header>
 
     <div class="container">
-        <div class="image-container">
+        <div class="logo-container">
             <img src="LOGOTAPAS.png" class="image" alt="LOGO DE PROYECTO PEC">
             <button class="back-button" onclick="window.history.back()">Atrás</button>
         </div>
+
+        <p class="steps-title">PASOS A SEGUIR</p>
+
+        <div class="image-container">
+            <img src="p1.png" class="image" alt="Imagen del proyecto">
+            <button class="back-button" onclick="window.history.back()">Atrás</button>
+        </div>
+
         <section>
             <h2>Proyecto: TAPAS</h2>
             <p class="objective">Objetivo del proyecto: El objetivo de este proyecto es recolectar tapas de botella, con el fin de venderlas y que el capital recaudado sea donado a una asociación que ayuda a personas con cáncer mediante tratamientos.</p>
@@ -154,7 +173,17 @@
     <br><br><br>
 
     <script>
-        const imageElement = document.querySelector('.image');
+        const images = [
+            'p1.png', 
+            'p2.png',
+            'p3.png',
+            'p4.png',
+            'p5.png',
+            'p6.png',
+            'p7.png'
+        ];
+
+        const imageElement = document.querySelector('.image-container .image');
         let currentIndex = 0;
 
         imageElement.addEventListener('click', () => {
@@ -165,4 +194,5 @@
 
 </body>
 </html>
+
 
