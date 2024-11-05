@@ -64,29 +64,15 @@
         .image-container {
             position: relative;
             display: inline-block;
+            margin-top: 30px; 
         }
 
         .image {
-            width: 350px;
+            width: 200px; 
             transition: opacity 0.3s ease;
             cursor: pointer; 
-        }
-
-        .back-button {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #fff;
-            border: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .back-button:hover {
-            background-color: #ddd;
+            display: block; 
+            margin: 0 auto; 
         }
 
         .objective {
@@ -95,24 +81,58 @@
             color: #555;
         }
 
-        .saber-mas-button {
+        .carousel {
             margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 18px;
-            background-color: #cf0505;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        .saber-mas-button:hover {
-            background-color: #cc0616;
+        .carousel img {
+            width: 100%; 
+            max-width: 250px; 
+            display: none; 
+            transition: opacity 0.5s ease; 
+        }
+
+        .carousel img.active {
+            display: block; 
+            opacity: 1;
+        }
+
+        .carousel button {
+            background-color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            z-index: 1; 
+        }
+
+        .carousel button:hover {
+            background-color: #ddd;
+        }
+
+        .carousel .prev {
+            margin-right: 10px; 
+        }
+
+        .carousel .next {
+            margin-left: 10px; 
         }
 
         h1 {
             font-size: 3em;
             animation: parpadeo 1s infinite, brillo 1.5s infinite;
+        }
+
+        .steps-title {
+            color: black; 
+            margin-top: 20px; 
+            font-size: 1.5em; 
         }
 
         @keyframes parpadeo {
@@ -138,8 +158,6 @@
         </nav>
     </header>
     
-    <center> <p style="color: #ffffff;">PASOS A SEGUIR</p> </center>
-    
     <div class="container">
         <div class="image-container">
             <img src="logoa.png" class="image" alt="LOGO DE PROYECTO PEC">
@@ -148,39 +166,45 @@
         <section>
             <h2>Proyecto: Asilo para personas de la tercera edad</h2>
             <p class="objective">Objetivo del proyecto: Fomentar en nuestros estudiantes la conciencia social y sensibilización sobre el cuidado del adulto mayor en su comunidad.</p>
-            <p>Docentes que participan:
-                <br>Gemma Adlemi Morales Villegas</br>
-                <br>J. Antonio Romo Marín</br>
-                <br>David Emmanuel Andrade Torres</br>
-                <br>Silvia Márquez Rodríguez</br>
-                <br>Claudia Elizabeth Martínez Murillo</br>
-                <br>Orlando Ramiro Esquivel Arellano</br>
-                <br>Ana Celia Rodarte Durón</br>
-                <br>Ma. Magdalena Valdivia López</br>
-                <br>María Patricia Arellano Flores</br>
-                <br>María Soledad Salazar Vázquez</br>
-                <br>Juana Inés Flores López</br>
-            </p>
-            <a href="https://www.bancodetapitas.org/empresas" target="_blank">Visita Página sobre asilo</a>
         </section>
+
+        
+        <p class="steps-title">PASOS A SEGUIR</p>
+        
+       
+        <div class="carousel">
+            <button class="prev" onclick="changeImage(-1)">&#10094;</button>
+            <img src="1.JPEG" class="active" alt="Imagen 1">
+            <img src="2.JPEG" alt="Imagen 2">
+            <img src="3.JPEG" alt="Imagen 3">
+            <button class="next" onclick="changeImage(1)">&#10095;</button>
+        </div>
+
+        <p>Docentes que participan:
+            <br>Gemma Adlemi Morales Villegas</br>
+            <br>J. Antonio Romo Marín</br>
+            <br>David Emmanuel Andrade Torres</br>
+            <br>Silvia Márquez Rodríguez</br>
+            <br>Claudia Elizabeth Martínez Murillo</br>
+            <br>Orlando Ramiro Esquivel Arellano</br>
+            <br>Ana Celia Rodarte Durón</br>
+            <br>Ma. Magdalena Valdivia López</br>
+            <br>María Patricia Arellano Flores</br>
+            <br>María Soledad Salazar Vázquez</br>
+            <br>Juana Inés Flores López</br>
+        </p>
+        <a href="https://www.bancodetapitas.org/empresas" target="_blank">Visita Página sobre asilo</a>
     </div>
 
-    <br><br><br>
-
-    <script> 
-        const images = [
-            '0.JPEG', 
-            '1.JPEG',
-            '2.JPEG',
-        ];
-
-        const imageElement = document.querySelector('.image');
+    <script>
+        const images = document.querySelectorAll('.carousel img');
         let currentIndex = 0;
 
-        imageElement.addEventListener('mouseover', () => {
-            currentIndex = (currentIndex + 1) % images.length;
-            imageElement.src = images[currentIndex];
-        });
+        function changeImage(direction) {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + direction + images.length) % images.length;
+            images[currentIndex].classList.add('active');
+        }
     </script>
 
 </body>
