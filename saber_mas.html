@@ -87,39 +87,39 @@
             
             <button class="back-button" onclick="window.history.back()">Regresar</button>
 
-            <script>
-                function cambiarImagen1() {
-                    var imagen1 = document.getElementById("imagen1");
-                    imagen1.classList.add('hidden'); 
-                    
-                    setTimeout(function() { 
-                        if (imagen1.src.includes heigth 300 ("a1.jpg")) { 
-                            imagen1.src = "a.jpeg";  
-                            imagen1.alt = "Astigmatismo-Miopía";
-                        } else {
-                            imagen1.src = "a1.jpg";   
-                            imagen1.alt = "Astigmatismo";
-                        }
-                        imagen1.classList.remove('hidden'); 
-                    }, 500);
-                }
+          <script>
+    function cambiarImagen1() {
+        var imagen1 = document.getElementById("imagen1");
+        imagen1.classList.add('hidden'); 
+        
+        setTimeout(function() { 
+            if (imagen1.src.includes("a1.jpg")) { 
+                imagen1.src = "a.jpeg";  
+                imagen1.alt = "Astigmatismo-Miopía";
+            } else {
+                imagen1.src = "a1.jpg";   
+                imagen1.alt = "Astigmatismo";
+            }
+            imagen1.classList.remove('hidden'); 
+        }, 500);
+    }
 
-                function cambiarImagen2() {
-                    var imagen2 = document.getElementById("imagen2");
-                    imagen2.classList.add('hidden'); 
-                    
-                    setTimeout(function() {
-                        if (imagen2.src.includes("m1.jpg")) {
-                            imagen2.src = "m.jpeg";  
-                            imagen2.alt = "Astigmatismo-Miopía";
-                        } else {
-                            imagen2.src = "m1.jpg";   
-                            imagen2.alt = "Miopía";
-                        }
-                        imagen2.classList.remove('hidden'); 
-                    }, 500);
-                }
-            </script>
+    function cambiarImagen2() {
+        var imagen2 = document.getElementById("imagen2");
+        imagen2.classList.add('hidden'); 
+        
+        setTimeout(function() {
+            if (imagen2.src.includes("m1.jpg")) {
+                imagen2.src = "m.jpeg";  
+                imagen2.alt = "Astigmatismo-Miopía";
+            } else {
+                imagen2.src = "m1.jpg";   
+                imagen2.alt = "Miopía";
+            }
+            imagen2.classList.remove('hidden'); 
+        }, 500);
+    }
+</script>
         </section>
     </center>
 </body>
