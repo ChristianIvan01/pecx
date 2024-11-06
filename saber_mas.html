@@ -77,14 +77,14 @@
             <p>Haz clic en las imágenes para alternar entre astigmatismo y miopía</p>
 
             <div class="image-container">
-                <!-- Imagen 1 -->
+           
                 <img src="a1.jpg" id="imagen1" alt="Astigmatismo" onclick="cambiarImagen1()">
 
-                <!-- Imagen 2 -->
+             
                 <img src="m1.jpg" id="imagen2" alt="Miopía" onclick="cambiarImagen2()">
             </div>
 
-            <!-- Botón para regresar -->
+            
             <button class="back-button" onclick="window.history.back()">Regresar</button>
 
             <script>
@@ -93,7 +93,7 @@
                     imagen1.classList.add('hidden'); 
                     
                     setTimeout(function() { 
-                        if (imagen1.src.includes("a1.jpg")) {
+                        if (imagen1.src.includes heigth 300 ("a1.jpg")) { 
                             imagen1.src = "a.jpeg";  
                             imagen1.alt = "Astigmatismo-Miopía";
                         } else {
