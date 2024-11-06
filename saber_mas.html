@@ -87,7 +87,43 @@
             
             <button class="back-button" onclick="window.history.back()">Regresar</button>
 
-          <script>
+        <style>
+    .image-container {
+        display: inline-block;
+        margin-right: 20px; 
+    }
+    .hidden {
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+</style>
+
+<div class="image-container">
+    <img id="imagen1" src="a1.jpg" alt="Astigmatismo" onclick="cambiarImagen1()" />
+</div>
+<div class="image-container">
+    <img id="imagen2" src="m1.jpg" alt="Miopía" onclick="cambiarImagen2()" />
+</div>
+
+<style>
+    .image-container {
+        display: inline-block; 
+        margin-right: 20px; 
+    }
+    .hidden {
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+</style>
+
+<div class="image-container">
+    <img id="imagen1" src="a1.jpg" alt="Astigmatismo" onclick="cambiarImagen1()" />
+</div>
+<div class="image-container">
+    <img id="imagen2" src="m1.jpg" alt="Miopía" onclick="cambiarImagen2()" />
+</div>
+
+<script>
     function cambiarImagen1() {
         var imagen1 = document.getElementById("imagen1");
         imagen1.classList.add('hidden'); 
@@ -120,6 +156,8 @@
         }, 500);
     }
 </script>
+
+
         </section>
     </center>
 </body>
